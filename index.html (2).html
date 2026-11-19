@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Derecho animal · Abogados defensores de los animales</title>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f8f7;--surface:#fff;--ink:#2a3b38;--muted:#60736f;--green:#3f7f6c;--green-ink:#fff;--gold:#f5cf9a;--line:#dbe6e3;--hero:#dcece8;--hero-ink:#23423b;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17211f;--surface:#1f2c29;--ink:#e8f0ee;--muted:#a8bab5;--green:#8cc7b3;--green-ink:#17211f;--gold:#f5cf9a;--line:#33443f;--hero:#24382f;--hero-ink:#e8f0ee}}
+:root[data-theme="dark"]{--bg:#17211f;--surface:#1f2c29;--ink:#e8f0ee;--muted:#a8bab5;--green:#8cc7b3;--green-ink:#17211f;--gold:#f5cf9a;--line:#33443f;--hero:#24382f;--hero-ink:#e8f0ee}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:"Young Serif",Georgia,serif;font-weight:400;line-height:1.15;margin:0 0 .6em}
+h1{font-size:clamp(2.3rem,6vw,4rem)}h2{font-size:clamp(1.7rem,3.5vw,2.4rem)}h3{font-size:1.25rem}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:18px;padding-top:12px;padding-bottom:12px;flex-wrap:wrap}
+.brand{font-family:"Young Serif",serif;font-size:1.15rem;text-decoration:none;margin-right:auto}
+.nav a.l{text-decoration:none;font-size:.95rem;color:var(--muted)}
+.nav a.l:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--gold);color:#2a3b38;font-weight:700;border:0;border-radius:999px;padding:.8em 1.5em;text-decoration:none;cursor:pointer;font:inherit;font-weight:700}
+.btn.alt{background:transparent;color:inherit;border:2px solid currentColor}
+.hero{background:var(--hero);color:var(--hero-ink);padding:64px 0 72px}.hero .wrap{display:grid;gap:32px;align-items:center;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.hero svg{width:100%;height:auto;max-width:420px;justify-self:center}.fig{display:block;margin:1.2em auto;width:150px;height:auto}
+.hero p{max-width:34em;font-size:1.2rem;opacity:.92}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+section{padding:64px 0}
+section.tint{background:var(--surface);border-block:1px solid var(--line)}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.tint .card{background:var(--bg)}
+.card p{margin:0;color:var(--muted)}
+.lead{max-width:40em;color:var(--muted)}
+.tl{border-left:3px solid var(--gold);padding-left:22px;max-width:42em}
+.tl p{margin:.3em 0 1em}
+.tl b{font-family:"Young Serif",serif;font-weight:400}
+.essay{max-width:40em;margin:0 auto;font-size:1.15rem}
+.essay blockquote{margin:1.6em 0;padding:.2em 0 .2em 22px;border-left:4px solid var(--gold);font-family:"Young Serif",serif;font-size:1.5rem;line-height:1.3}
+.essay .big{font-family:"Young Serif",serif;font-size:1.6rem;line-height:1.25}
+.video{background:var(--hero);color:var(--hero-ink);border-radius:16px;padding:28px;display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.video video{width:100%;border-radius:10px;background:#000;aspect-ratio:16/9}
+.video ol{margin:0;padding-left:1.1em;font-size:.95rem}
+.video p.s{font-size:.9rem;opacity:.85;margin:.6em 0 0}
+form{display:grid;gap:14px;max-width:520px}
+label{font-weight:500;font-size:.95rem}
+input,select,textarea{width:100%;padding:.7em .8em;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:inherit}
+.note{font-size:.9rem;color:var(--muted)}
+footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+/* chatbot */
+#chat-fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:30;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+#chat{position:fixed;right:18px;bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:30;width:min(370px,calc(100vw - 36px));height:min(520px,70vh);background:var(--surface);border:1px solid var(--line);border-radius:16px;display:none;flex-direction:column;overflow:hidden;box-shadow:0 12px 36px rgba(0,0,0,.3)}
+#chat.open{display:flex}
+#chat header{background:var(--green);color:var(--green-ink);padding:12px 16px;font-weight:700}
+#msgs{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+.m{max-width:85%;padding:.6em .9em;border-radius:14px;font-size:.95rem;line-height:1.45}
+.m.b{background:var(--bg);border:1px solid var(--line);align-self:flex-start}
+.m.u{background:var(--green);color:var(--green-ink);align-self:flex-end}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 8px}
+.chips button{border:1px solid var(--green);background:transparent;color:var(--ink);border-radius:999px;padding:.3em .8em;font:inherit;font-size:.85rem;cursor:pointer}
+#cf{display:flex;border-top:1px solid var(--line)}
+#cf input{border:0;border-radius:0;flex:1}
+#cf button{border:0;background:var(--gold);font-weight:700;padding:0 16px;cursor:pointer;color:#16221b}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+<a class="brand" href="#inicio">Defensa animal · Estudio jurídico</a>
+<a class="l" href="#quienes">Quiénes somos</a><a class="l" href="#servicios">Servicios</a><a class="l" href="#apoyo">Nuestro apoyo</a><a class="l" href="#historia">Cómo iniciamos</a><a class="l" href="#vida">La vida se defiende</a><a class="l" href="#contacto">Contacto</a>
+</div></header>
+
+<main>
+<section class="hero" id="inicio"><div class="wrap"><div>
+<h1>La vida se defiende.<br>Seas persona o animal, cuenta con nosotros.</h1>
+<p>Somos abogados y defensores de los animales. Damos asesoría legal accesible a personas y a grupos animalistas, y en algunos casos, gratuita.</p>
+<div class="row"><button class="btn" data-open-chat>Habla con nuestro asistente</button><a class="btn alt" href="#guia">Descarga la guía gratuita</a></div></div>
+<svg viewBox="0 0 360 280" role="img" aria-label="Un perro y un gato sentados juntos"><ellipse cx="180" cy="262" rx="160" ry="14" fill="#b9d3cb"/><path d="M300 235c40-5 45-60 15-70" fill="none" stroke="#8fa6bd" stroke-width="14" stroke-linecap="round"/><ellipse cx="110" cy="215" rx="62" ry="48" fill="#e3b98f"/><ellipse cx="68" cy="98" rx="20" ry="34" fill="#c78f66" transform="rotate(18 68 98)"/><ellipse cx="152" cy="98" rx="20" ry="34" fill="#c78f66" transform="rotate(-18 152 98)"/><circle cx="110" cy="120" r="52" fill="#e3b98f"/><ellipse cx="110" cy="140" rx="24" ry="18" fill="#f6e5d2"/><ellipse cx="110" cy="132" rx="8" ry="6" fill="#3a2f2a"/><circle cx="92" cy="112" r="5" fill="#3a2f2a"/><circle cx="128" cy="112" r="5" fill="#3a2f2a"/><path d="M100 150q10 8 20 0" fill="none" stroke="#3a2f2a" stroke-width="3" stroke-linecap="round"/><ellipse cx="255" cy="222" rx="48" ry="40" fill="#a9bdd2"/><polygon points="220,118 226,80 252,106" fill="#8fa6bd"/><polygon points="290,118 284,80 258,106" fill="#8fa6bd"/><circle cx="255" cy="142" r="42" fill="#a9bdd2"/><ellipse cx="241" cy="138" rx="5" ry="7" fill="#2f3b2f"/><ellipse cx="269" cy="138" rx="5" ry="7" fill="#2f3b2f"/><polygon points="250,150 260,150 255,157" fill="#e7a9a9"/><path d="M215 150h-22M215 158l-20 6M295 150h22M295 158l20 6" stroke="#6c7f94" stroke-width="2" stroke-linecap="round"/></svg>
+</div></section>
+
+<section id="quienes"><div class="wrap">
+<h2>Quiénes somos</h2>
+<p class="lead">Somos egresados de Derecho y defensores de los derechos de los animales. Creemos que la ley también debe proteger a quienes no pueden hablar, y ponemos nuestra profesión al servicio de esa idea.</p>
+<div class="grid" style="margin-top:28px">
+<div class="card"><h3>Misión</h3><p>Defender legalmente a los animales y acompañar a quienes los protegen.</p></div>
+<div class="card"><h3>Visión</h3><p>Que defender a un animal ante la justicia sea posible para cualquier persona o colectivo.</p></div>
+<div class="card"><h3>Valores</h3><p>Compasión, justicia, compromiso y transparencia en cada caso.</p></div>
+</div></div></section>
+
+<section class="tint" id="servicios"><div class="wrap">
+<h2>Qué servicios ofrecemos</h2>
+<div class="grid">
+<div class="card"><h3>Asesoría a personas</h3><p>Denuncias por maltrato y abandono, tenencia responsable y conflictos con vecinos por animales.</p></div>
+<div class="card"><h3>Apoyo a grupos animalistas</h3><p>Constitución legal de asociaciones, convenios, trámites y defensa en procesos. Costo económico o gratuito según el caso.</p></div>
+<div class="card"><h3>Acompañamiento en denuncias</h3><p>Redactamos tu denuncia y damos seguimiento ante la fiscalía o la municipalidad.</p></div>
+<div class="card"><h3>Talleres y charlas</h3><p>Enseñamos qué dice la ley sobre los animales y cómo hacerla valer.</p></div>
+</div></div></section>
+
+<section id="apoyo"><div class="wrap">
+<h2>Nuestro apoyo económico a la defensa animal</h2>
+<p class="lead">Parte de lo que cobramos vuelve a la causa. Cada consulta de pago hace posible una defensa gratuita para quien no puede costearla.</p>
+<div class="grid" style="margin-top:28px">
+<div class="card"><h3>Casos gratuitos</h3><p>Priorizamos rescates y casos de crueldad grave de colectivos con pocos recursos.</p></div>
+<div class="card"><h3>Tarifas sociales</h3><p>Costos reducidos para refugios, albergues y voluntarios independientes.</p></div>
+<div class="card"><h3>Aporte de ingresos</h3><p>Destinamos un porcentaje de nuestros ingresos a la defensa animal. Consúltanos el detalle actualizado.</p></div>
+</div></div></section>
+
+<section class="tint" id="historia"><div class="wrap">
+<h2>Cómo iniciamos</h2>
+<div class="tl">
+<p><b>En la facultad.</b> Nos conocimos estudiando Derecho y descubrimos la misma incomodidad: los animales casi no aparecían en las clases.</p>
+<p><b>Un caso sin respuesta.</b> Vimos un caso de maltrato que nadie supo cómo denunciar. Ahí entendimos cuánta falta hacía un abogado de su lado.</p>
+<p><b>Al egresar.</b> Decidimos convertir esa convicción en nuestra profesión y abrir un estudio que ayude a personas y colectivos a un costo justo.</p>
+<p><b>Hoy.</b> Seguimos creciendo con cada caso, cada voluntario y cada animal que logra justicia.</p>
+</div></div></section>
+
+<section id="vida"><div class="wrap">
+<div class="essay">
+<h2>La vida se defiende, seas persona y animal cuenta con nosotros</h2>
+<p>Hay una frase que escuchamos demasiado: <em>“es solo un animal”</em>.</p>
+<p>Pero detrás de cada perro golpeado, cada gato abandonado y cada caballo explotado hay un ser que siente dolor, miedo y también afecto. Quien lo ha mirado a los ojos lo sabe.</p>
+<blockquote>El maltrato no desaparece cuando se calla. Desaparece cuando alguien lo denuncia.</blockquote>
+<p>La ley reconoce cada vez más a los animales como seres sintientes, y en muchos países maltratarlos es un delito. Sin embargo, casi nadie denuncia: no saben cómo, creen que no servirá o piensan que no pueden pagar un abogado.</p>
+<svg class="fig" viewBox="0 0 150 160" role="img" aria-label="Un conejo con un corazón"><ellipse cx="60" cy="140" rx="44" ry="14" fill="#dcece8"/><ellipse cx="46" cy="34" rx="11" ry="32" fill="#e9dfe6"/><ellipse cx="74" cy="34" rx="11" ry="32" fill="#e9dfe6"/><ellipse cx="46" cy="36" rx="5" ry="22" fill="#f2c4cf"/><ellipse cx="74" cy="36" rx="5" ry="22" fill="#f2c4cf"/><ellipse cx="60" cy="108" rx="38" ry="30" fill="#e9dfe6"/><circle cx="60" cy="78" r="28" fill="#e9dfe6"/><circle cx="50" cy="74" r="3.5" fill="#3a2f3a"/><circle cx="70" cy="74" r="3.5" fill="#3a2f3a"/><ellipse cx="60" cy="84" rx="4" ry="3" fill="#e59aa9"/><path d="M118 60c-12-14-30 0-18 14l18 18 18-18c12-14-6-28-18-14z" fill="#e59aa9"/></svg>
+<p class="big">Ahí entramos nosotros.</p>
+<p>Somos abogados que decidimos que la justicia no puede quedarse a la puerta de los refugios. Asesoramos a personas y a colectivos animalistas, con costos accesibles y, cuando el caso lo requiere, de forma gratuita.</p>
+<p>Si presenciaste maltrato, si rescatas animales o si quieres que tu colectivo tenga respaldo legal, no estás solo.</p>
+<p><button class="btn" data-open-chat>Cuéntanos tu caso</button></p>
+</div></div></section>
+
+<section class="tint" id="video"><div class="wrap">
+<h2>Video promocional</h2>
+<div class="video">
+<div>
+<video id="promo" controls preload="none" aria-label="Video promocional"></video>
+<p class="s" id="vidnote">Aquí se mostrará tu video generado con IA. Agrega su enlace en la configuración (VIDEO_URL).</p>
+</div>
+<div>
+<h3 style="color:inherit">Guion de 30 segundos</h3>
+<ol>
+<li>0–5 s: un perro mira a cámara. “Ellos no pueden denunciar.”</li>
+<li>5–12 s: dos abogados caminan hacia un refugio. “Nosotros sí.”</li>
+<li>12–20 s: entrega de documentos a voluntarios. “Asesoría legal accesible, y gratuita cuando más se necesita.”</li>
+<li>20–30 s: un perro adoptado juega. “La vida se defiende. Seas persona o animal, cuenta con nosotros.”</li>
+</ol>
+</div></div></div></section>
+
+<section id="guia"><div class="wrap">
+<h2>Guía gratuita: 5 pasos para denunciar el maltrato animal</h2>
+<div class="grid">
+<div class="card"><h3>1. Asegura al animal</h3><p>Si está herido, llévalo a un veterinario y pide un informe.</p></div>
+<div class="card"><h3>2. Reúne evidencia</h3><p>Fotos, videos, fecha, lugar y datos de testigos.</p></div>
+<div class="card"><h3>3. No confrontes</h3><p>Evita enfrentar al agresor; protege tu seguridad.</p></div>
+<div class="card"><h3>4. Denuncia</h3><p>Acude a la fiscalía, la policía o la municipalidad de tu zona.</p></div>
+<div class="card"><h3>5. Da seguimiento</h3><p>Guarda el número del caso y consulta su avance. Podemos ayudarte.</p></div>
+</div>
+<p style="margin-top:20px"><button class="btn" id="print">Imprimir o guardar como PDF</button></p>
+</div></section>
+
+<section class="tint" id="contacto"><div class="wrap">
+<h2>Contacto</h2>
+<p class="lead">Escríbenos por el medio que prefieras.</p>
+<p><a class="btn" id="wa" href="#contacto">WhatsApp</a> <button class="btn alt" data-open-chat>Chat con el asistente</button></p>
+<p class="note" id="channels"></p>
+<form id="cform">
+<div><label for="n">Nombre</label><input id="n" required></div>
+<div><label for="t">Tipo de caso</label><select id="t"><option>Maltrato o abandono</option><option>Apoyo a un grupo animalista</option><option>Conflicto vecinal</option><option>Otro</option></select></div>
+<div><label for="mm">Mensaje</label><textarea id="mm" rows="4" required></textarea></div>
+<button class="btn" type="submit">Enviar por correo</button>
+<p class="note" id="fnote"></p>
+</form>
+</div></section>
+</main>
+
+<footer><div class="wrap">© 2026 Estudio jurídico de derecho animal. Página creada por Suarez Ulfe Alison Bricedt. La información de este sitio es orientativa y no reemplaza una asesoría legal formal.</div></footer>
+
+<button class="btn" id="chat-fab" data-open-chat aria-label="Abrir chat">Asistente</button>
+<div id="chat" role="dialog" aria-label="Asistente legal animal">
+<header>Asistente Legal Animal</header>
+<div id="msgs" aria-live="polite"></div>
+<div class="chips" id="chips"></div>
+<form id="cf"><input id="ci" placeholder="Escribe tu consulta" autocomplete="off" aria-label="Mensaje"><button>Enviar</button></form>
+</div>
+
+<script>
+/* CONFIGURACIÓN: reemplaza con tus datos reales */
+const CONFIG={whatsapp:"",email:"",instagram:"",ciudad:"",VIDEO_URL:""};
+
+const $=s=>document.querySelector(s);
+/* canales */
+(function(){
+ const wa=$("#wa"),ch=$("#channels"),fn=$("#fnote");
+ if(CONFIG.whatsapp){wa.href="https://wa.me/"+CONFIG.whatsapp.replace(/\D/g,"")+"?text="+encodeURIComponent("Hola, necesito asesoría legal sobre un caso de animales.");wa.target="_blank";wa.rel="noopener"}
+ else{wa.addEventListener("click",e=>{e.preventDefault();ch.textContent="Aún no hay número de WhatsApp configurado. Usa el asistente mientras tanto."})}
+ const parts=[];if(CONFIG.email)parts.push("Correo: "+CONFIG.email);if(CONFIG.instagram)parts.push("Instagram: "+CONFIG.instagram);if(CONFIG.ciudad)parts.push("Ciudad: "+CONFIG.ciudad);
+ ch.textContent=parts.join(" · ");
+ $("#cform").addEventListener("submit",e=>{e.preventDefault();
+  if(!CONFIG.email){fn.textContent="Aún no hay correo configurado. Usa el asistente o WhatsApp.";return}
+  location.href="mailto:"+CONFIG.email+"?subject="+encodeURIComponent("Consulta: "+$("#t").value)+"&body="+encodeURIComponent($("#mm").value+"\n\n"+$("#n").value)});
+ if(CONFIG.VIDEO_URL){const v=$("#promo");v.src=CONFIG.VIDEO_URL;$("#vidnote").textContent=""}
+ $("#print").onclick=()=>window.print();
+})();
+
+/* chatbot */
+const msgs=$("#msgs"),chips=$("#chips"),chat=$("#chat");
+function add(t,c){const d=document.createElement("div");d.className="m "+c;d.textContent=t;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight}
+const contactLine=()=>CONFIG.whatsapp?"Puedes escribirnos por WhatsApp al "+CONFIG.whatsapp+".":"Puedes usar el formulario de la sección Contacto.";
+const KB=[
+ [/hola|buenas|buen d/,"¡Hola! Soy el asistente de este estudio de abogados defensores de los animales. ¿Eres particular o parte de un grupo animalista?"],
+ [/costo|precio|cuesta|cobr|gratis|gratuit|pagar/,"Nuestros costos son accesibles y algunos casos son gratuitos, sobre todo rescates y colectivos con pocos recursos. Se define tras evaluar tu caso. "],
+ [/denunci|maltrat|golpe|abandon|herid|crueld/,"Lamento lo ocurrido. Pasos útiles: 1) lleva al animal al veterinario si está herido, 2) guarda fotos, videos y datos de testigos, 3) no confrontes al agresor, 4) denuncia ante la fiscalía, policía o municipalidad. Cuéntame qué pasó, dónde y cuándo, y los abogados te orientarán. "],
+ [/grupo|colectivo|refugio|asociaci|ong|voluntar/,"Apoyamos a grupos animalistas con constitución legal, convenios, trámites y defensa en procesos, a costo económico o gratuito según el caso. "],
+ [/servicio|ofrec|hacen|ayuda/,"Ofrecemos asesoría a personas, apoyo legal a grupos animalistas, acompañamiento en denuncias y talleres sobre legislación animal."],
+ [/vecin|ladr|ruido|mascota/,"Los conflictos vecinales por animales suelen resolverse con diálogo y, si no, por vía legal. Cuéntanos tu situación para orientarte. "],
+ [/guia|guía|pasos/,"Tenemos una guía gratuita de 5 pasos para denunciar el maltrato animal. Está en la sección Guía de esta página."],
+ [/contact|whatsapp|llamar|cita|consulta|agendar|correo/,"Con gusto. "]
+];
+function reply(q){
+ const s=q.toLowerCase();
+ for(const [r,a] of KB){if(r.test(s)){return a.endsWith(" ")?a+contactLine():a}}
+ return "No tengo una respuesta segura para eso y no quiero inventarte información legal. Mejor consulta con los abogados. "+contactLine();
+}
+function send(t){if(!t.trim())return;add(t,"u");setTimeout(()=>add(reply(t),"b"),350)}
+["Quiero denunciar maltrato","¿Cuánto cuesta?","Soy de un grupo animalista","¿Qué servicios ofrecen?"].forEach(t=>{const b=document.createElement("button");b.type="button";b.textContent=t;b.onclick=()=>send(t);chips.appendChild(b)});
+$("#cf").addEventListener("submit",e=>{e.preventDefault();const i=$("#ci");send(i.value);i.value=""});
+let started=false;
+document.querySelectorAll("[data-open-chat]").forEach(b=>b.addEventListener("click",()=>{chat.classList.add("open");if(!started){started=true;add("¡Hola! Soy el asistente de este estudio de abogados defensores de los animales. No reemplazo una asesoría legal formal. ¿En qué puedo ayudarte?","b")}$("#ci").focus()}));
+</script>
+</body>
+</html>
